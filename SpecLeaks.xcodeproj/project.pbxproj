@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481258F927690C3A0034E005 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 481258F827690C3A0034E005 /* Nimble */; };
+		481258FC27690C6F0034E005 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 481258FB27690C6F0034E005 /* Quick */; };
 		79D836ED2288AC7D00A5D942 /* SpecLeaks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D836E32288AC7D00A5D942 /* SpecLeaks.framework */; };
 		79D836F22288AC7D00A5D942 /* SpecLeaksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D836F12288AC7D00A5D942 /* SpecLeaksTests.swift */; };
 		79D836F42288AC7D00A5D942 /* SpecLeaks.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D836E62288AC7D00A5D942 /* SpecLeaks.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,8 +18,6 @@
 		79DFEF452289297F00CF65D5 /* LeakTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DFEF3E2289297F00CF65D5 /* LeakTest.swift */; };
 		79DFEF462289297F00CF65D5 /* AnalyzeLeakAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DFEF3F2289297F00CF65D5 /* AnalyzeLeakAction.swift */; };
 		79DFEF472289297F00CF65D5 /* Expectation+Leaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DFEF402289297F00CF65D5 /* Expectation+Leaks.swift */; };
-		79DFEF4822892A8900CF65D5 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DFEF372288B12E00CF65D5 /* Quick.framework */; };
-		79DFEF4922892A8D00CF65D5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DFEF352288B12200CF65D5 /* Nimble.framework */; };
 		8C0FEB0B242B6F0700B72A8A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0FEB0A242B6F0700B72A8A /* XCTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,9 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79DFEF4822892A8900CF65D5 /* Quick.framework in Frameworks */,
+				481258FC27690C6F0034E005 /* Quick in Frameworks */,
+				481258F927690C3A0034E005 /* Nimble in Frameworks */,
 				8C0FEB0B242B6F0700B72A8A /* XCTest.framework in Frameworks */,
-				79DFEF4922892A8D00CF65D5 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +161,10 @@
 			dependencies = (
 			);
 			name = SpecLeaks;
+			packageProductDependencies = (
+				481258F827690C3A0034E005 /* Nimble */,
+				481258FB27690C6F0034E005 /* Quick */,
+			);
 			productName = SpecLeaks;
 			productReference = 79D836E32288AC7D00A5D942 /* SpecLeaks.framework */;
 			productType = "com.apple.product-type.framework";
@@ -209,6 +213,10 @@
 				en,
 			);
 			mainGroup = 79D836D92288AC7D00A5D942;
+			packageReferences = (
+				481258F727690C3A0034E005 /* XCRemoteSwiftPackageReference "Nimble" */,
+				481258FA27690C6F0034E005 /* XCRemoteSwiftPackageReference "Quick" */,
+			);
 			productRefGroup = 79D836E42288AC7D00A5D942 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -405,7 +413,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				INFOPLIST_FILE = SpecLeaks/Info.plist;
@@ -435,7 +442,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				INFOPLIST_FILE = SpecLeaks/Info.plist;
@@ -520,6 +526,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		481258F727690C3A0034E005 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = exactVersion;
+				version = 9.2.1;
+			};
+		};
+		481258FA27690C6F0034E005 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		481258F827690C3A0034E005 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 481258F727690C3A0034E005 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		481258FB27690C6F0034E005 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 481258FA27690C6F0034E005 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 79D836DA2288AC7D00A5D942 /* Project object */;
 }
